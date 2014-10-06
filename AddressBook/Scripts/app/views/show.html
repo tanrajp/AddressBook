@@ -1,0 +1,17 @@
+﻿<div class ="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>House Number</th><th>Address Line 1</th><th>Address Line 2</th><th>City</th><th>Post Code</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:addressList">
+            <td data-bind="text: HouseNumber"></td>
+            <td data-bind="text: AddressLine1"></td>
+            <td data-bind="text: AddressLine2"></td>
+            <td data-bind="text: City"></td>
+            <td data-bind="text: PostCode"></td>
+        </tbody>
+    </table>
+    <button>Add New</button>
+</div> 
