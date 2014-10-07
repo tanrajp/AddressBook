@@ -1,10 +1,20 @@
-﻿<div class ="table-responsive">
+﻿
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Cities
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" data-bind="foreach:addressList">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: City"></a></li>
+  </ul>
+</div>
     <table>
         <thead>
             <tr>
                 <th>House Number</th><th>Address Line 1</th><th>Address Line 2</th><th>City</th><th>Post Code</th>
             </tr>
         </thead>
+        <tbody data-bind="foreach:addressList">
         <tbody data-bind="foreach:addressList">
             <td data-bind="text: HouseNumber"></td>
             <td data-bind="text: AddressLine1"></td>
@@ -13,5 +23,3 @@
             <td data-bind="text: PostCode"></td>
         </tbody>
     </table>
-    <button>Add New</button>
-</div> 

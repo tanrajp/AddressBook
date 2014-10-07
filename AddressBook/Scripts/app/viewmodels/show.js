@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'knockout', 'jquery'], function (app, ko, $) {
+﻿define(['durandal/app', 'knockout', 'jquery','bootstrap'], function (app, ko, $, bootstrap) {
     var vm = function () {
         var self = this;
 
