@@ -1,4 +1,4 @@
-﻿
+﻿<div>
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
     Cities
@@ -8,18 +8,42 @@
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: City"></a></li>
   </ul>
 </div>
-    <table>
-        <thead>
-            <tr>
-                <th>House Number</th><th>Address Line 1</th><th>Address Line 2</th><th>City</th><th>Post Code</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach:addressList">
-        <tbody data-bind="foreach:addressList">
-            <td data-bind="text: HouseNumber"></td>
-            <td data-bind="text: AddressLine1"></td>
-            <td data-bind="text: AddressLine2"></td>
-            <td data-bind="text: City"></td>
-            <td data-bind="text: PostCode"></td>
-        </tbody>
-    </table>
+<table>
+    <thead>
+        <tr>
+            <th>House Number</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>City</th>
+            <th>Post Code</th>
+            <th>View</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach:addressList">
+    <tbody data-bind="foreach:addressList">
+        <td data-bind="text: HouseNumber"></td>
+        <td data-bind="text: AddressLine1"></td>
+        <td data-bind="text: AddressLine2"></td>
+        <td data-bind="text: City"></td>
+        <td data-bind="text: PostCode"></td>
+        <td><abbr title="view" data-bind="attr: { 'data-child': Id }" data-toggle="modal" data-target=".contactView">View</abbr></td>
+    </tbody>
+</table>
+
+<div class="modal fade .contactView" tabindex="-1" role="dialog" aria-labelledby=".contactView-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="contactView-label"/>
+            </div>
+            <div class="modal-body">
+                <!--ko compose: currentContact--><!--/ko-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div> 
+</div>
+    </div>
